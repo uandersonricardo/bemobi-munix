@@ -234,7 +234,7 @@ const startTime = getShortTime()
     </div>
   </section>
 
-  <section class="border-t border-gray-100">
+  <section class="border-t border-gray-200">
     <div class="w-full flex items-center px-4 py-4 overflow-visible whitespace-nowrap gap-2">
       <span class="text-[#002198] font-semibold py-1.5 px-3 rounded-full border-2 border-[#002198]"
         >Problemas mais comuns</span
@@ -248,7 +248,7 @@ const startTime = getShortTime()
     </div>
     <div
       v-if="listening"
-      class="w-full flex items-center justify-center px-2 py-2 bg-white border-t border-gray-100 gap-1"
+      class="w-full flex items-center justify-center px-2 py-2 bg-white border-t border-gray-200 gap-1"
     >
       <div
         class="font-semibold rounded-full h-10 w-10 flex justify-center items-center text-red-500 animate-pulse"
@@ -257,7 +257,7 @@ const startTime = getShortTime()
       </div>
       <span class="text-lg font-semibold text-gray-400 animate-pulse">Gravando...</span>
     </div>
-    <div v-else class="w-full flex items-center px-2 py-2 bg-white border-t border-gray-100 gap-1">
+    <div v-else class="w-full flex items-center px-2 py-2 bg-white border-t border-gray-200 gap-1">
       <button
         class="hover:bg-gray-100 text-red-500 font-semibold rounded-full h-10 w-10 flex justify-center items-center"
         @click="handleCamera"

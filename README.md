@@ -21,8 +21,8 @@ O Bemobi Assistant é uma peça-chave para aumentar a eficiência dos serviços 
 
 O repositório é organizado nas seguintes pastas:
 
-`/backend`: Implementação do servidor utilizando Node.js e Express.
-`/frontend`: Interface desenvolvida com Vite, Vue.js e TailwindCSS.
+- `/backend`: Implementação do servidor utilizando Node.js e Express.
+- `/frontend`: Interface desenvolvida com Vite, Vue.js e TailwindCSS.
 
 ## 🛠 Como Rodar o Projeto
 

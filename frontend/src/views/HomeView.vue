@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import { CheckSquare2Icon, CircleAlertIcon } from 'lucide-vue-next'
-import { MenuIcon, SparklesIcon } from 'lucide-vue-next'
+import {
+  BotMessageSquareIcon,
+  CheckSquare2Icon,
+  CircleAlertIcon,
+  SquareArrowOutUpRightIcon
+} from 'lucide-vue-next'
+import { MenuIcon } from 'lucide-vue-next'
+import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const overdue = [
@@ -57,25 +63,56 @@ const invoices = [
     amount: 273.11
   }
 ]
+
+const dropdownOpen = ref(false)
+
+const handleToggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value
+}
+
+const tooltip = ref(true)
+
+onMounted(() => {
+  setTimeout(() => {
+    tooltip.value = false
+  }, 5000)
+})
 </script>
 
 <template>
   <header class="w-full bg-[#002198] p-4 flex items-center gap-2 justify-center relative">
     <img
       src="https://companieslogo.com/img/orig/TIMB_BIG.D-c971ee58.png?t=1720244494"
-      class="h-5 my-1"
+      class="h-5 my-1 select-none"
     />
-    <nav class="flex gap-2 absolute top-4 right-4">
-      <RouterLink to="/connect"><MenuIcon class="text-white" :size="28" /></RouterLink>
+    <nav class="flex gap-2 absolute top-4 right-4 select-none">
+      <MenuIcon class="text-white cursor-pointer" :size="28" @click="handleToggleDropdown" />
+      <div v-if="dropdownOpen" class="z-10 w-72 bg-white rounded-lg shadow absolute right-0 top-8">
+        <ul class="py-2 text-sm text-gray-700">
+          <li>
+            <RouterLink
+              to="/connect"
+              class="px-4 py-2 hover:bg-gray-100 text-lg font-semibold flex items-center"
+              ><SquareArrowOutUpRightIcon class="mr-3" /> Abrir Bemobi Connect</RouterLink
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <div class="group fixed bottom-4 right-4 flex items-end justify-end">
+    <div
+      class="absolute bottom-4 right-16 mr-2 text-sm bg-gray-800 text-white py-1 px-2 rounded-lg whitespace-nowrap transition"
+      :class="{ 'opacity-0 pointer-events-none': !tooltip }"
+    >
+      Clique aqui para falar com o Beemo
+    </div>
     <RouterLink
       to="/chat"
       class="text-white shadow-xl flex items-center justify-center p-4 rounded-full bg-[#002198] hover:bg-blue-950 transition z-50 absolute"
     >
-      <SparklesIcon class="text-white" :size="28" />
+      <BotMessageSquareIcon class="text-white" :size="28" />
     </RouterLink>
   </div>
 

@@ -70,3 +70,95 @@ Portabilidade
 
 Técnico Virtual TIM Fibra
 - Conte com suporte rápido para sua internet
+
+## Ações disponíveis pelo assistente
+- Baixar boleto
+- Informar sobre os planos, serviços, informações do cliente, dados de pagamento e mais
+- Trocar dados de pagamento
+- Trocar informações do cliente
+- Sugerir planos
+
+## Histórico de pagamentos
+Janeiro
+- Valor: R$ 119,99
+- Vencimento: 10/01/2024
+- Pagamento: 09/01/2024
+- Status: Pago
+- Plano: TIM Black
+
+Fevereiro
+- Valor: R$ 119,99
+- Vencimento: 10/02/2024
+- Pagamento: 11/02/2024
+- Status: Atrasado
+- Plano: TIM Black
+
+Março
+- Valor: R$ 119,99
+- Vencimento: 10/03/2024
+- Pagamento: 10/03/2024
+- Status: Pago
+- Plano: TIM Black
+
+Abril
+- Valor: R$ 119,99
+- Vencimento: 10/04/2024
+- Pagamento: 10/04/2024
+- Status: Pago
+- Plano: TIM Black
+
+Maio
+- Valor: R$ 304,99
+- Vencimento: 10/05/2024
+- Pagamento: 12/05/2024
+- Status: Atrasado
+- Plano: TIM Black Família
+
+Junho
+- Valor: R$ 304,99
+- Vencimento: 10/06/2024
+- Pagamento: 10/06/2024
+- Status: Pago
+- Plano: TIM Black Família
+
+Julho
+- Valor: R$ 304,99
+- Vencimento: 10/07/2024
+- Pagamento: 15/07/2024
+- Status: Atrasado
+- Plano: TIM Black Família
+
+Agosto
+- Valor: R$ 304,99
+- Vencimento: 10/08/2024
+- Pagamento: 09/08/2024
+- Status: Pago
+- Plano: TIM Black Família
+
+Setembro
+- Valor: R$ 304,99
+- Vencimento: 10/09/2024
+- Pagamento: 10/09/2024
+- Status: Pago
+- Plano: TIM Black Família
+
+Outubro
+- Valor: R$ 304,99
+- Vencimento: 10/10/2024
+- Pagamento: 08/10/2024
+- Status: Pago
+- Plano: TIM Black Família
+
+Novembro
+- Valor: R$ 304,99
+- Vencimento: 10/11/2024
+- Pagamento: Não efetuado
+- Status: Atrasado
+- Plano: TIM Black Família
+
+Dezembro
+- Valor: R$ 304,99
+- Vencimento: 10/12/2024
+- Pagamento: Não efetuado
+- Status: Em aberto
+- Plano: TIM Black Família

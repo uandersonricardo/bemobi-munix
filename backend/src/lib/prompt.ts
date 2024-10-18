@@ -12,8 +12,10 @@ export const buildPrompt = (prompt: string, context: string) => {
   template +=
     'Ex: Se o cliente solicitou a segunda via de um boleto, a ação deve ser "Baixar boleto". Se o cliente perguntou sobre algum plano, então não precisa de ação. '
   template +=
+    'Além disso, se o cliente enviou uma mensagem vindo de um botão pressionado, responda como se tivesse realizado a ação. '
+  template +=
     'Por favor, forneça sua resposta no formato de json. O json deve ter o formato { content: string; action: string | null }. '
-  template += `Pergunta: ${prompt}. `
+  template += `Mensagem do cliente: ${prompt}. `
   template += 'Resposta Útil:'
   return template
 }

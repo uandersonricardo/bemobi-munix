@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { ChevronDownIcon, ChevronUpIcon } from 'lucide-vue-next'
+import {
+  ArrowRightIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  InfoIcon,
+  ShieldIcon
+} from 'lucide-vue-next'
 import { ref } from 'vue'
 
 const accordion = ref<number | null>(null)
@@ -31,15 +37,18 @@ const toggleAccordion = (index: number) => {
         class="overflow-hidden transition-all"
         :class="{ 'max-h-0': accordion !== 1, 'max-h-[1000px]': accordion === 1 }"
       >
-        <p class="py-3 px-3 rounded-lg font-semibold text-white bg-orange-500 mb-4">
+        <p
+          class="py-3 px-3 rounded-lg font-semibold text-white bg-orange-500 mb-4 flex items-center"
+        >
+          <InfoIcon class="mr-2" :size="18" />
           Vimos que o seu pacote atual vem acabando antes do final do mês, que tal tentar esse novo
           pacote?
         </p>
-        <div class="flex w-full gap-8 mb-8">
-          <div class="flex flex-col flex-1">
+        <div class="flex w-full gap-3 mb-8 items-center">
+          <div class="flex flex-col flex-1 self-start">
             <h2 class="font-semibold text-xl mb-4">Plano atual</h2>
             <div
-              class="border border-gray-200 p-4 rounded-lg w-full font-semibold flex flex-col bg-white"
+              class="border border-gray-200 p-4 rounded-lg w-full font-semibold flex items-start flex-col bg-white"
             >
               <span class="text-md">TIM Controle</span>
               <a href="#" class="text-xs text-blue-600 mb-4">Ver mais detalhes</a>
@@ -48,7 +57,6 @@ const toggleAccordion = (index: number) => {
               <span class="text-sm text-green-600">R$ 57,99/mês</span>
               <span class="text-xs mt-4">15 GB do plano</span>
               <span class="text-xs">+ 10 GB promocionais</span>
-              <span class="text-xs">&nbsp;</span>
               <span class="text-sm mt-2">Depois de ativar o plano, escolha no app Meu TIM:</span>
               <div class="flex items-center gap-2 mt-2">
                 <img
@@ -64,10 +72,11 @@ const toggleAccordion = (index: number) => {
               </div>
             </div>
           </div>
+          <ArrowRightIcon :size="24" class="text-gray-400 mt-6" />
           <div class="flex flex-col flex-1">
             <h2 class="font-semibold text-xl mb-4">Sugestão</h2>
             <div
-              class="border border-gray-200 p-4 rounded-lg w-full font-semibold flex flex-col relative bg-white"
+              class="border border-gray-200 p-4 rounded-lg w-full font-semibold flex flex-col items-start justify-start relative bg-white"
             >
               <button
                 class="text-white bg-red-500 hover:bg-red-600 transition px-3 py-2 rounded-lg absolute top-4 right-4"
@@ -79,6 +88,11 @@ const toggleAccordion = (index: number) => {
               <span class="text-sm -mb-1">Até</span>
               <span class="text-4xl">45 GB</span>
               <span class="text-sm text-green-600">R$ 84,99/mês</span>
+              <span
+                class="text-xs bg-[#d9f2f4] text-[#2a6574] w-auto px-1.5 py-0.5 rounded mt-1 flex items-center gap-1"
+                ><ShieldIcon :size="12" fill="#3296A6" color="#294C50" /> Desconto de R$ 5,99 para o
+                nível Platina</span
+              >
               <span class="text-xs mt-4">30 GB do plano</span>
               <span class="text-xs">+ 10 GB promocionais</span>
               <span class="text-xs">+ 5 GB exclusivos para redes sociais</span>

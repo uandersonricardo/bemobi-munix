@@ -11,7 +11,7 @@ import person from '../assets/person.png'
 </script>
 
 <template>
-  <div class="max-w-5xl">
+  <div class="max-w-4xl">
     <div class="bg-[#FCDBE1] px-6 py-6 rounded-xl mb-4 flex cursor-pointer">
       <ReceiptTextIcon :size="36" class="mr-4" />
       <div class="flex flex-col flex-1">

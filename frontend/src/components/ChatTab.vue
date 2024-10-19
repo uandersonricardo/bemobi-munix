@@ -139,7 +139,7 @@ const speak = (text: string) => {
   speechSynthesis.speak(utterance)
 }
 
-const isVisible = ref(true)
+const isVisible = ref(false)
 
 const startTime = getShortTime()
 </script>
@@ -152,7 +152,7 @@ const startTime = getShortTime()
       @click="isVisible = !isVisible"
     >
       <div class="flex justify-between items-center gap-8">
-        <span class="text-white font-semibold text-lg">Olá, Maria Silva</span>
+        <span class="text-white font-semibold text-lg">Olá, Adriana Silva</span>
         <img
           src="https://companieslogo.com/img/orig/TIMB_BIG.D-c971ee58.png?t=1720244494"
           class="h-4"

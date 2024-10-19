@@ -223,7 +223,7 @@ const handleAction = (action: string) => {
     </div>
     <div class="flex justify-start items-center gap-2">
       <RouterLink to="/"><ChevronLeftIcon class="text-white" :size="28" /></RouterLink>
-      <span class="text-white font-semibold text-xl">Olá, Maria Silva</span>
+      <span class="text-white font-semibold text-xl">Olá, Adriana Silva</span>
       <div class="relative ml-auto">
         <button
           class="text-white bg-transparent hover:bg-white/20 focus:outline-none font-medium text-sm p-2 text-center inline-flex items-center -mr-1 rounded-full"

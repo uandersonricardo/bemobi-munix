@@ -12,7 +12,7 @@ import { ref } from 'vue'
 import person from '../assets/person.png'
 import PixIcon from './PixIcon.vue'
 
-const accordion = ref<number | null>(1)
+const accordion = ref<number | null>(null)
 
 const toggleAccordion = (index: number) => {
   if (accordion.value === index) {
@@ -294,7 +294,7 @@ const toggleAccordion = (index: number) => {
 
     <div class="bg-gray-100 px-8 rounded-xl mb-4">
       <button
-        @click="toggleAccordion(2)"
+        @click="toggleAccordion(3)"
         class="w-full flex justify-between items-center py-6 text-slate-800"
       >
         <div class="flex flex-col justify-center items-start h-10 flex-1">
@@ -313,13 +313,13 @@ const toggleAccordion = (index: number) => {
           >
         </div>
         <span class="text-slate-800 transition-transform duration-300">
-          <ChevronDownIcon v-if="accordion !== 2" />
+          <ChevronDownIcon v-if="accordion !== 3" />
           <ChevronUpIcon v-else />
         </span>
       </button>
       <div
         class="overflow-hidden transition-all"
-        :class="{ 'max-h-0': accordion !== 2, 'max-h-[1000px]': accordion === 2 }"
+        :class="{ 'max-h-0': accordion !== 3, 'max-h-[1000px]': accordion === 3 }"
       >
         <div class="flex items-center gap-2">
           <button
@@ -428,7 +428,7 @@ const toggleAccordion = (index: number) => {
 
     <div class="bg-gray-100 px-8 rounded-xl mb-4">
       <button
-        @click="toggleAccordion(2)"
+        @click="toggleAccordion(4)"
         class="w-full flex justify-between items-center py-6 text-slate-800"
       >
         <div class="flex flex-col justify-center items-start h-10 flex-1">
@@ -447,13 +447,285 @@ const toggleAccordion = (index: number) => {
           >
         </div>
         <span class="text-slate-800 transition-transform duration-300">
-          <ChevronDownIcon v-if="accordion !== 2" />
+          <ChevronDownIcon v-if="accordion !== 4" />
           <ChevronUpIcon v-else />
         </span>
       </button>
       <div
         class="overflow-hidden transition-all"
-        :class="{ 'max-h-0': accordion !== 2, 'max-h-[1000px]': accordion === 2 }"
+        :class="{ 'max-h-0': accordion !== 4, 'max-h-[1000px]': accordion === 4 }"
+      >
+        <div class="flex items-center gap-2">
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PixIcon class="w-4" />
+            Copiar PIX total
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <BarcodeIcon :size="16" />
+            Copiar código de barras total
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MessageSquareTextIcon :size="16" />
+            Enviar PIX total para o WhatsApp
+          </button>
+        </div>
+
+        <div class="mt-4">
+          <span class="font-semibold flex items-center">Celular da Juli</span>
+          <span class="font-semibold text-sm flex items-center text-[#1463FD]"> R$59,90</span>
+        </div>
+        <div class="flex items-center gap-2 mt-4">
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PrinterIcon :size="16" />
+            Imprimir
+          </button>
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MailIcon :size="16" />
+            Enviar para o e-mail
+          </button>
+        </div>
+        <div class="flex items-center gap-2 mt-2">
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PixIcon class="w-4" />
+            Copiar código PIX
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <BarcodeIcon :size="16" />
+            Copiar código de barras
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MessageSquareTextIcon :size="16" />
+            Enviar código PIX para o WhatsApp
+          </button>
+        </div>
+
+        <div class="mt-4">
+          <span class="font-semibold flex items-center">Meu celular</span>
+          <span class="font-semibold text-sm flex items-center text-[#1463FD]"> R$59,90</span>
+        </div>
+        <div class="flex items-center gap-2 mt-4">
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PrinterIcon :size="16" />
+            Imprimir
+          </button>
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MailIcon :size="16" />
+            Enviar para o e-mail
+          </button>
+        </div>
+        <div class="flex items-center gap-2 mt-2 mb-6">
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PixIcon class="w-4" />
+            Copiar código PIX
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <BarcodeIcon :size="16" />
+            Copiar código de barras
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MessageSquareTextIcon :size="16" />
+            Enviar código PIX para o WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-100 px-8 rounded-xl mb-4">
+      <button
+        @click="toggleAccordion(5)"
+        class="w-full flex justify-between items-center py-6 text-slate-800"
+      >
+        <div class="flex flex-col justify-center items-start h-10 flex-1">
+          <span class="font-semibold text-xl">Junho - 2024</span>
+          <span class="font-semibold text-sm flex items-center gap-2 text-[#1463FD]"> R$84,90</span>
+        </div>
+        <div class="flex flex-col justify-center items-end mx-6">
+          <span class="font-semibold text-sm flex items-center gap-2 text-[#1463FD]">
+            PAGO - 17/06/2024</span
+          >
+          <span class="font-semibold flex items-center gap-2 text-sm">
+            <img
+              class="inline-block h-4 w-4 rounded-full mt-0.5"
+              src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt=""
+            />
+            Jonas Silva</span
+          >
+        </div>
+        <span class="text-slate-800 transition-transform duration-300">
+          <ChevronDownIcon v-if="accordion !== 5" />
+          <ChevronUpIcon v-else />
+        </span>
+      </button>
+      <div
+        class="overflow-hidden transition-all"
+        :class="{ 'max-h-0': accordion !== 5, 'max-h-[1000px]': accordion === 5 }"
+      >
+        <div class="flex items-center gap-2">
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PixIcon class="w-4" />
+            Copiar PIX total
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <BarcodeIcon :size="16" />
+            Copiar código de barras total
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MessageSquareTextIcon :size="16" />
+            Enviar PIX total para o WhatsApp
+          </button>
+        </div>
+
+        <div class="mt-4">
+          <span class="font-semibold flex items-center">Celular da Juli</span>
+          <span class="font-semibold text-sm flex items-center text-[#1463FD]"> R$59,90</span>
+        </div>
+        <div class="flex items-center gap-2 mt-4">
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PrinterIcon :size="16" />
+            Imprimir
+          </button>
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MailIcon :size="16" />
+            Enviar para o e-mail
+          </button>
+        </div>
+        <div class="flex items-center gap-2 mt-2">
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PixIcon class="w-4" />
+            Copiar código PIX
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <BarcodeIcon :size="16" />
+            Copiar código de barras
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MessageSquareTextIcon :size="16" />
+            Enviar código PIX para o WhatsApp
+          </button>
+        </div>
+
+        <div class="mt-4">
+          <span class="font-semibold flex items-center">Meu celular</span>
+          <span class="font-semibold text-sm flex items-center text-[#1463FD]"> R$59,90</span>
+        </div>
+        <div class="flex items-center gap-2 mt-4">
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PrinterIcon :size="16" />
+            Imprimir
+          </button>
+          <button
+            disabled
+            class="opacity-50 bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MailIcon :size="16" />
+            Enviar para o e-mail
+          </button>
+        </div>
+        <div class="flex items-center gap-2 mt-2 mb-6">
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <PixIcon class="w-4" />
+            Copiar código PIX
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <BarcodeIcon :size="16" />
+            Copiar código de barras
+          </button>
+          <button
+            class="bg-[#1463FD] hover:bg-[#2b43cb] py-1 px-2 rounded-lg text-white font-semibold flex items-center gap-2"
+          >
+            <MessageSquareTextIcon :size="16" />
+            Enviar código PIX para o WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-100 px-8 rounded-xl mb-4">
+      <button
+        @click="toggleAccordion(6)"
+        class="w-full flex justify-between items-center py-6 text-slate-800"
+      >
+        <div class="flex flex-col justify-center items-start h-10 flex-1">
+          <span class="font-semibold text-xl">Maio - 2024</span>
+          <span class="font-semibold text-sm flex items-center gap-2 text-[#1463FD]"> R$84,90</span>
+        </div>
+        <div class="flex flex-col justify-center items-end mx-6">
+          <span class="font-semibold text-sm flex items-center gap-2 text-[#1463FD]">
+            PAGO - 20/05/2024</span
+          >
+          <span class="font-semibold flex items-center gap-2 text-sm">
+            <img
+              class="inline-block h-4 w-4 rounded-full mt-0.5"
+              src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt=""
+            />
+            Jonas Silva</span
+          >
+        </div>
+        <span class="text-slate-800 transition-transform duration-300">
+          <ChevronDownIcon v-if="accordion !== 6" />
+          <ChevronUpIcon v-else />
+        </span>
+      </button>
+      <div
+        class="overflow-hidden transition-all"
+        :class="{ 'max-h-0': accordion !== 6, 'max-h-[1000px]': accordion === 6 }"
       >
         <div class="flex items-center gap-2">
           <button

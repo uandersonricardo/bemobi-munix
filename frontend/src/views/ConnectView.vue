@@ -76,7 +76,7 @@ const tab = ref('service')
   <div class="flex-1 w-full flex overflow-hidden">
     <aside
       class="h-full bg-[#C1D9FF] w-64 shadow-lg bg-cover"
-      :style="{ backgroundImage: `url(${sidebar}` }"
+      :style="{ backgroundImage: `url(${sidebar})` }"
     >
       <div
         class="bg-white text-black p-2 mx-4 mt-4 cursor-pointer rounded-lg mb-2 flex items-center gap-3 border border-gray-300"

@@ -1,8 +1,16 @@
 <script setup lang="ts">
-import { CheckSquare2Icon, CircleAlertIcon, LogOutIcon, PlusIcon } from 'lucide-vue-next'
+import {
+  CheckSquare2Icon,
+  CircleAlertIcon,
+  LogOutIcon,
+  PlusIcon,
+  ShieldHalf,
+  ShieldIcon
+} from 'lucide-vue-next'
 import { MenuIcon, SparklesIcon } from 'lucide-vue-next'
 import { RouterLink } from 'vue-router'
 import person from '../assets/person.png'
+import logo from '../assets/logo.png'
 import sidebar from '../assets/sidebar.svg'
 import ChatTab from '@/components/ChatTab.vue'
 import ServiceTab from '@/components/ServiceTab.vue'
@@ -14,31 +22,38 @@ import TicketsTab from '@/components/TicketsTab.vue'
 const companies = [
   {
     logo: 'https://yt3.googleusercontent.com/BX4A8DQyZTmmRSeGf_jKdv8XS-KWZQflaec4Kx9VvCNagE93XuvTb-QJLkBUMB27AawzonRPpw=s900-c-k-c0x00ffffff-no-rj',
-    name: 'Neoenergia'
+    name: 'Neoenergia',
+    type: 'Energia'
   },
   {
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-dT9pyeTrk30OPa-g9FYrD5wLShxvfozgQ&s',
-    name: 'Inter'
+    name: 'Inter',
+    type: 'Banco'
   },
   {
     logo: 'https://www.mobills.com.br/blog/wp-content/uploads/2022/08/banco-digital-Mercado-Pago.jpg',
-    name: 'Mercado pago'
+    name: 'Mercado pago',
+    type: 'Banco'
   },
   {
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTrwX_DcPOTxx5PaXPnzF-U7oCZsZgkMcjyw&s',
-    name: 'Rappi'
+    name: 'Rappi',
+    type: 'Alimentação'
   },
   {
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmXGHq367g7E-SIR32tiY9jL59KO6nKEZR7Q&s',
-    name: 'Sky'
+    name: 'Sky',
+    type: 'Televisão por assinatura'
   },
   {
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnwnvi2Fvb1Vdz6iJ0YhfpUHXtHvxO22DnIjjWO5_RYuFbvysl2O4ss0Pt0RNlHpy-l34&usqp=CAU',
-    name: 'Smart'
+    name: 'Smart',
+    type: 'Telecomunicações'
   },
   {
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcs-N7wGVVrgALHpRYhStHfuSyUCGxewY0NQ&s',
-    name: 'TIM'
+    name: 'TIM',
+    type: 'Telecomunicações'
   }
 ]
 
@@ -46,11 +61,10 @@ const tab = ref('service')
 </script>
 
 <template>
-  <header class="w-full bg-[#D9E5FF] py-2 px-3 flex items-center gap-2 justify-between relative">
-    <img
-      src="https://bemobi.com/wp-content/uploads/2023/07/Primary_horizontal_Logo.png"
-      class="h-8"
-    />
+  <header
+    class="w-full bg-[#020F5B] py-2 px-3 flex items-center gap-2 justify-between relative text-white"
+  >
+    <img :src="logo" class="h-8" />
     <nav class="flex gap-6 font-semibold">
       <RouterLink to="/connect">Contato</RouterLink>
       <RouterLink to="/" class="flex items-center gap-2"
@@ -60,20 +74,32 @@ const tab = ref('service')
   </header>
 
   <div class="flex-1 w-full flex overflow-hidden">
-    <aside class="h-full bg-[#C1D9FF] w-64" :style="{ backgroundImage: `url(${sidebar}` }">
+    <aside
+      class="h-full bg-[#C1D9FF] w-64 shadow-lg bg-cover"
+      :style="{ backgroundImage: `url(${sidebar}` }"
+    >
       <div
-        class="bg-[#69A3FE] cursor-pointer p-2 mx-4 mt-4 mb-2 flex items-center gap-3 rounded-lg"
+        class="bg-white text-black p-2 mx-4 mt-4 cursor-pointer rounded-lg mb-2 flex items-center gap-3 border border-gray-300"
       >
         <img :src="person" class="w-10 h-10 rounded" />
-        <span class="text-white font-semibold">Adriana Silva</span>
+        <div class="flex flex-col">
+          <span class="font-semibold leading-5">Adriana Silva</span>
+          <span class="text-xs flex items-center gap-0.5"
+            ><ShieldIcon :size="14" fill="#3296A6" color="#294C50" /> Conta platina</span
+          >
+        </div>
       </div>
+      <span class="font-semibold text-xs uppercase text-[#212A5F] ml-4">Suas contas</span>
       <div
         v-for="(company, index) in companies"
         :key="index"
-        class="border-b border-[#1463FD33] px-4 py-2 flex items-center gap-3 last:bg-white/35 hover:bg-white/15 cursor-pointer"
+        class="border- border-[#1463FD33] px-4 py-2 flex items-center gap-3 last:bg-white/50 hover:bg-white/30 cursor-pointer"
       >
-        <img :src="company.logo" class="w-8 h-8 rounded" />
-        <span class="font-semibold text-[#212A5F]">{{ company.name }}</span>
+        <img :src="company.logo" class="w-8 h-8 rounded-lg" />
+        <div class="flex flex-col leading-5">
+          <span class="font-semibold text-[#212A5F]">{{ company.name }}</span>
+          <span class="text-[#212A5F] text-xs">{{ company.type }}</span>
+        </div>
       </div>
     </aside>
 
@@ -97,23 +123,23 @@ const tab = ref('service')
             alt=""
           />
           <span
-            class="inline-flex h-6 w-6 rounded-full ring-2 ring-[#002198] bg-gray-200 items-center justify-center"
+            class="inline-flex h-6 w-6 rounded-full ring-2 ring-[#002198] bg-white items-center justify-center"
           >
             <PlusIcon :size="14" class="text-[#002198]" />
           </span>
         </div>
       </section>
-      <nav class="flex text-black font-semibold">
+      <nav class="flex font-semibold bg-[#002198] text-white px-3">
         <div
-          class="flex-1 flex items-center justify-center p-2 bg-gray-100 cursor-pointer hover:bg-gray-200 select-none"
-          :class="{ 'bg-gray-300': tab === 'service' }"
+          class="flex-1 flex items-center justify-center p-2 cursor-pointer mx-1 rounded-t-lg hover:bg-blue-950/50 select-none"
+          :class="{ 'bg-white text-black hover:bg-white': tab === 'service' }"
           @click="tab = 'service'"
         >
           Serviço contratado
         </div>
         <div
-          class="flex-1 flex items-center justify-center p-2 bg-gray-100 cursor-pointer hover:bg-gray-200 select-none"
-          :class="{ 'bg-gray-300': tab === 'info' }"
+          class="flex-1 flex items-center justify-center p-2 cursor-pointer mx-1 rounded-t-lg hover:bg-blue-950/50 select-none"
+          :class="{ 'bg-white text-black hover:bg-white': tab === 'info' }"
           @click="tab = 'info'"
         >
           <span>Informações e avisos</span
@@ -123,15 +149,15 @@ const tab = ref('service')
           >
         </div>
         <div
-          class="flex-1 flex items-center justify-center p-2 bg-gray-100 cursor-pointer hover:bg-gray-200 select-none"
-          :class="{ 'bg-gray-300': tab === 'history' }"
+          class="flex-1 flex items-center justify-center p-2 cursor-pointer mx-1 rounded-t-lg hover:bg-blue-950/50 select-none"
+          :class="{ 'bg-white text-black hover:bg-white': tab === 'history' }"
           @click="tab = 'history'"
         >
           Histórico de cobranças
         </div>
         <div
-          class="flex-1 flex items-center justify-center p-2 bg-gray-100 cursor-pointer hover:bg-gray-200 select-none"
-          :class="{ 'bg-gray-300': tab === 'tickets' }"
+          class="flex-1 flex items-center justify-center p-2 cursor-pointer mx-1 rounded-t-lg hover:bg-blue-950/50 select-none"
+          :class="{ 'bg-white text-black hover:bg-white': tab === 'tickets' }"
           @click="tab = 'tickets'"
         >
           Chamados
@@ -150,3 +176,9 @@ const tab = ref('service')
     <ChatTab />
   </div>
 </template>
+
+<style scoped>
+.platinum {
+  background: linear-gradient(135deg, #6ab0b8, #8ed1bb 40%, #c1d9e6 70%, #b0c4c5);
+}
+</style>

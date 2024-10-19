@@ -16,7 +16,7 @@ const toggleAccordion = (index: number) => {
 
 <template>
   <div class="max-w-4xl">
-    <div class="bg-[#F2F4FF] px-8 rounded-xl mb-4">
+    <div class="bg-gray-100 px-8 rounded-xl mb-4">
       <button
         @click="toggleAccordion(1)"
         class="w-full flex justify-between items-center py-6 text-slate-800"
@@ -115,7 +115,7 @@ const toggleAccordion = (index: number) => {
       </div>
     </div>
 
-    <div class="bg-[#F2F4FF] px-8 rounded-xl mb-4">
+    <div class="bg-gray-100 px-8 rounded-xl mb-4">
       <button
         @click="toggleAccordion(2)"
         class="w-full flex justify-between items-center py-6 text-slate-800"
@@ -124,7 +124,7 @@ const toggleAccordion = (index: number) => {
           <span class="font-semibold text-xl">Celular da Juli</span>
           <span class="font-semibold text-sm flex items-center gap-2">
             <img
-              class="inline-block h-5 w-5 rounded-full"
+              class="inline-block h-4 w-4 rounded-full"
               src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
             />

@@ -19,7 +19,7 @@ const toggleAccordion = (index: number) => {
   <div class="max-w-4xl flex gap-8">
     <div>
       <h2 class="font-semibold text-xl mb-4">Em andamento</h2>
-      <div class="bg-[#F2F4FF] px-8 rounded-xl mb-4">
+      <div class="bg-gray-100 px-8 rounded-xl mb-4">
         <button
           @click="toggleAccordion(1)"
           class="w-full flex justify-between items-center py-6 text-slate-800"
@@ -83,7 +83,7 @@ const toggleAccordion = (index: number) => {
 
     <div>
       <h2 class="font-semibold text-xl mb-4">Finalizados</h2>
-      <div class="bg-[#F2F4FF] px-8 rounded-xl mb-4">
+      <div class="bg-gray-100 px-8 rounded-xl mb-4">
         <button
           @click="toggleAccordion(2)"
           class="w-full flex justify-between items-center py-6 text-slate-800"

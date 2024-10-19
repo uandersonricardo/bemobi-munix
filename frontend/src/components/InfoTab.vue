@@ -23,7 +23,7 @@ import person from '../assets/person.png'
       </div>
     </div>
 
-    <div class="bg-[#F2F4FF] px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
+    <div class="bg-gray-100 px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
       <CheckCircle2Icon :size="36" class="mr-4" />
       <div class="flex flex-col flex-1">
         <div class="font-semibold text-lg">Fatura de setembro paga</div>
@@ -38,21 +38,21 @@ import person from '../assets/person.png'
       >
     </div>
 
-    <div class="bg-[#F2F4FF] px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
+    <div class="bg-gray-100 px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
       <TriangleAlertIcon :size="36" class="mr-4" />
       <div class="flex flex-col flex-1">
         <div class="font-semibold text-lg">Fatura de setembro vence em dois dias</div>
       </div>
     </div>
 
-    <div class="bg-[#F2F4FF] px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
+    <div class="bg-gray-100 px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
       <TriangleAlertIcon :size="36" class="mr-4" />
       <div class="flex flex-col flex-1">
         <div class="font-semibold text-lg">Fatura de setembro vence em cinco dias</div>
       </div>
     </div>
 
-    <div class="bg-[#F2F4FF] px-6 py-6 rounded-xl mb-4 flex cursor-pointer">
+    <div class="bg-gray-100 px-6 py-6 rounded-xl mb-4 flex cursor-pointer">
       <ReceiptTextIcon :size="36" class="mr-4" />
       <div class="flex flex-col flex-1">
         <div class="font-semibold text-lg">Fatura de setembro disponível</div>
@@ -63,7 +63,7 @@ import person from '../assets/person.png'
       </div>
     </div>
 
-    <div class="bg-[#F2F4FF] px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
+    <div class="bg-gray-100 px-6 py-6 rounded-xl mb-4 flex cursor-pointer items-center">
       <CheckCircle2Icon :size="36" class="mr-4" />
       <div class="flex flex-col flex-1">
         <div class="font-semibold text-lg">Fatura de agosto paga</div>
